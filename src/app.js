@@ -38,7 +38,7 @@ app.get('/about', (req, res)=>{
     res.render('about', {
         title1:'About',
         title: 'founder Bennewton',
-        name: 'ben bruce',
+        name: 'blackgik',
         age: 26
     })
 })
