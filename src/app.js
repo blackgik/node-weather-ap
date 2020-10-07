@@ -70,12 +70,13 @@ app.get('/weather', (req, res)=>{
             return res.send(error);
         }
 
-        forecast(longitude, latitude, (error, {description})=>{
+        forecast(longitude, latitude, (error, {description, dataFormat})=>{
             if(error){
                 return res.send(error)
             }
             const dataforcast = `it is ${description}`
             res.send({
+                format: dataFormat,
                 forecast: dataforcast,
                 location: location,
                 address: req.query.address,

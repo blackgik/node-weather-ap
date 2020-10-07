@@ -9,8 +9,10 @@ const forecast = (longtitude, latitude, callback)=>{
         } else if (body.error) {
             callback('unKnown coordinate search', undefined);
         } else{
+            const dataFormat = body.current.observation_time + `, temperature will be ${body.current.temperature} but it feelslike ${body.current.feelslike}`
             callback(undefined, {
                 temperature: body.current.temperature,
+                dataFormat,
                 feelslike: body.current.feelslike,
                 description: body.current.weather_descriptions[0],
                 precipitation: body.current.precip
